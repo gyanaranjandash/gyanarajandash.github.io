@@ -1628,21 +1628,65 @@
             </div>
           </div>
           <div class="contact-form reveal">
-            <!-- CONTACT FORM (non-functional placeholder) -->
-            <div class="form-group">
-              <label class="form-label">Your Name</label>
-              <input type="text" class="form-input" placeholder="Full name" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Organisation</label>
-              <input type="text" class="form-input" placeholder="Company / Fund" />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Message</label>
-              <textarea class="form-textarea" placeholder="Nature of enquiry..."></textarea>
-            </div>
-            <button class="form-submit" onclick="alert('Message received. Thank you for reaching out.')">Send Message →</button>
-          </div>
+
+  <!-- WORKING CONTACT FORM -->
+  <form action="https://formspree.io/f/mjgendwl" method="POST">
+
+    <div class="form-group">
+      <label class="form-label">Your Name</label>
+      <input 
+        type="text" 
+        name="name"
+        class="form-input" 
+        placeholder="Full name" 
+        required 
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Organisation</label>
+      <input 
+        type="text" 
+        name="organisation"
+        class="form-input" 
+        placeholder="Company / Fund" 
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Email</label>
+      <input 
+        type="email" 
+        name="email"
+        class="form-input" 
+        placeholder="your@email.com" 
+        required 
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Message</label>
+      <textarea 
+        name="message"
+        class="form-textarea" 
+        placeholder="Nature of enquiry..." 
+        required
+      ></textarea>
+    </div>
+
+    <!-- Email Subject -->
+    <input type="hidden" name="_subject" value="New message from gyanaranjandash.in" />
+
+    <!-- Optional redirect after submission -->
+    <!-- <input type="hidden" name="_next" value="https://gyanaranjandash.in/thank-you.html" /> -->
+
+    <button type="submit" class="form-submit">
+      Send Message →
+    </button>
+
+  </form>
+
+</div>
         </div>
       </div>
     </section>
