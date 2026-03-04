@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gyana Ranjan Dash — Strategy Leader | Reliance Industries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Jost:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS RESET & VARIABLES
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #0d1f3c;
+      --navy-mid:   #162d52;
+      --navy-light: #1e3a6e;
+      --gold:       #b8965a;
+      --gold-light: #d4af72;
+      --off-white:  #f7f6f3;
+      --white:      #ffffff;
+      --slate:      #4a5568;
+      --slate-light:#718096;
+      --border:     #e2ddd6;
+      --card-bg:    #ffffff;
+      --shadow-sm:  0 1px 3px rgba(13,31,60,0.06), 0 1px 2px rgba(13,31,60,0.04);
+      --shadow-md:  0 4px 16px rgba(13,31,60,0.08), 0 2px 6px rgba(13,31,60,0.05);
+      --shadow-lg:  0 12px 40px rgba(13,31,60,0.12), 0 4px 12px rgba(13,31,60,0.07);
+      --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans:  'Jost', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--off-white);
+      color: var(--navy);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(247,246,243,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    nav.scrolled { box-shadow: var(--shadow-md); }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+      list-style: none;
+    }
+
+    .nav-links a, .nav-links button {
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after, .nav-links button::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .nav-links a:hover, .nav-links button:hover,
+    .nav-links a.active, .nav-links button.active {
+      color: var(--navy);
+    }
+    .nav-links a:hover::after, .nav-links button:hover::after,
+    .nav-links a.active::after, .nav-links button.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      background: var(--navy) !important;
+      color: var(--white) !important;
+      padding: 0.55rem 1.3rem !important;
+      border-radius: 2px;
+      font-size: 0.75rem !important;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: background var(--transition) !important;
+    }
+    .nav-cta:hover { background: var(--navy-light) !important; }
+    .nav-cta::after { display: none !important; }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: var(--navy);
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       PAGE SYSTEM
+    ============================================================ */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 2rem 80px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(160deg, #f0ede8 0%, #e8e4dc 100%);
+      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content { }
+
+    /* EDIT HERO TAGLINE HERE */
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px; height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.35s forwards;
+    }
+
+    .hero-title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--slate);
+      line-height: 1.65;
+      margin-bottom: 0.4rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.5s forwards;
+    }
+
+    .hero-subtitle {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.62s forwards;
+    }
+
+    .hero-divider {
+      width: 48px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.65s forwards;
+    }
+
+    /* EDIT EXECUTIVE SUMMARY HERE */
+    .hero-bio {
+      font-size: 1.02rem;
+      color: var(--slate);
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.75s forwards;
+    }
+    .hero-bio strong { color: var(--navy); font-weight: 600; }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      opacity: 0;
+      animation: fadeSlideUp 0.8s 0.9s forwards;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all var(--transition);
+      border-radius: 2px;
+    }
+    .btn-primary:hover {
+      background: var(--navy-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(13,31,60,0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      padding: 0.82rem 1.8rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--navy);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all var(--transition);
+      border-radius: 2px;
+    }
+    .btn-outline:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--gold);
+      padding: 0.82rem 1.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--gold);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: all var(--transition);
+      border-radius: 2px;
+    }
+    .btn-ghost:hover {
+      background: var(--gold);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      opacity: 0;
+      animation: fadeIn 1s 0.6s forwards;
+    }
+
+    .profile-frame {
+      position: relative;
+      width: 280px;
+      height: 280px;
+    }
+    .profile-frame::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: -8px; right: 8px; bottom: 8px;
+      border: 1.5px solid var(--gold);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .profile-frame::after {
+      content: '';
+      position: absolute;
+      top: 8px; left: 8px; right: -8px; bottom: -8px;
+      border: 1px solid var(--navy-light);
+      border-radius: 50%;
+      opacity: 0.15;
+    }
+
+    .profile-img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(135deg, #d0ccc6 0%, #b8b4ac 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      color: var(--white);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .profile-img-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 4.5rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+      margin-top: 0.3rem;
+      display: block;
+    }
+
+    .hero-affiliation {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 1.4rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      box-shadow: var(--shadow-sm);
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-weight: 500;
+      width: 100%;
+      max-width: 300px;
+    }
+    .affiliation-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       SECTION COMMONS
+    ============================================================ */
+    section {
+      padding: 100px 2rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--slate);
+      max-width: 580px;
+      line-height: 1.75;
+    }
+
+    /* fade-in observer */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ============================================================
+       EXECUTIVE PROFILE SECTION
+    ============================================================ */
+    .profile-section { background: var(--off-white); }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+      margin-top: 3.5rem;
+    }
+
+    /* EDIT EXECUTIVE PROFILE PARAGRAPHS HERE */
+    .profile-text p {
+      font-size: 1rem;
+      color: var(--slate);
+      line-height: 1.85;
+      margin-bottom: 1.5rem;
+    }
+    .profile-text p strong { color: var(--navy); font-weight: 600; }
+    .profile-text p:last-child { margin-bottom: 0; }
+
+    .profile-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* EDIT METRICS HERE */
+    .metric-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      padding: 1.5rem 1.8rem;
+      border-radius: 3px;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+    .metric-card:hover {
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+    }
+    .metric-value {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      display: block;
+    }
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+      margin-top: 0.35rem;
+      display: block;
+      letter-spacing: 0.03em;
+    }
+
+    /* ============================================================
+       EXPERIENCE CARDS
+    ============================================================ */
+    .experience-section { background: var(--white); }
+
+    .exp-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* EDIT EXPERIENCE HERE */
+    .exp-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.2rem 2.4rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .exp-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .exp-card-org {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-card-role {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+      line-height: 1.3;
+    }
+
+    .exp-card-period {
+      font-size: 0.78rem;
+      color: var(--slate-light);
+      margin-bottom: 1.4rem;
+      letter-spacing: 0.04em;
+    }
+
+    .exp-card-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .exp-card-list li {
+      font-size: 0.9rem;
+      color: var(--slate);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .exp-card-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 5px; height: 1px;
+      background: var(--gold);
+    }
+
+    .section-footer {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    /* ============================================================
+       EDUCATION SECTION
+    ============================================================ */
+    .education-section { background: var(--navy); }
+    .education-section .section-label { color: var(--gold); }
+    .education-section .section-title { color: var(--white); }
+
+    .edu-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* EDIT EDUCATION HERE */
+    .edu-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      padding: 2rem 2rem;
+      transition: all var(--transition);
+      position: relative;
+    }
+    .edu-card:hover {
+      background: rgba(255,255,255,0.09);
+      transform: translateY(-3px);
+    }
+    .edu-card-year {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .edu-card-inst {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+      line-height: 1.3;
+    }
+    .edu-card-prog {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    .education-section .btn-outline {
+      border-color: rgba(255,255,255,0.3);
+      color: var(--white);
+    }
+    .education-section .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    /* ============================================================
+       RECOGNITION SECTION
+    ============================================================ */
+    .recognition-section { background: var(--off-white); }
+
+    .recognition-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3.5rem;
+    }
+
+    .recognition-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.4rem 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+    .recognition-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .recognition-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      color: white;
+    }
+    .recognition-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .recognition-text span {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+    }
+
+    /* ============================================================
+       EXPERTISE GRID
+    ============================================================ */
+    .expertise-section { background: var(--white); }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-top: 3.5rem;
+    }
+
+    .expertise-item {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 1.5rem 1.5rem;
+      text-align: center;
+      transition: all var(--transition);
+      cursor: default;
+    }
+    .expertise-item:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .expertise-item:hover .expertise-icon { color: var(--gold); }
+    .expertise-item:hover .expertise-name { color: var(--white); }
+
+    .expertise-icon {
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+      display: block;
+      transition: color var(--transition);
+    }
+
+    .expertise-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+      transition: color var(--transition);
+    }
+
+    /* ============================================================
+       CONTACT SECTION
+    ============================================================ */
+    .contact-section { background: var(--navy); padding: 100px 2rem; }
+    .contact-section .section-label { color: var(--gold); }
+    .contact-section .section-title { color: var(--white); }
+    .contact-section .section-desc { color: rgba(255,255,255,0.55); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      margin-top: 3.5rem;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.2rem 1.6rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 3px;
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .contact-item:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+    }
+    .contact-item-icon {
+      font-size: 1.2rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.2rem;
+    }
+    .contact-item-text span {
+      font-size: 0.92rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .form-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+
+    .form-input, .form-textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      padding: 0.9rem 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      color: var(--white);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.09);
+    }
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--gold);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all var(--transition);
+      align-self: flex-start;
+    }
+    .form-submit:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(184,150,90,0.3);
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: #091628;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.05em;
+    }
+    footer span { color: var(--gold); }
+
+    /* ============================================================
+       DETAIL PAGES (Experience / Education / Hobbies)
+    ============================================================ */
+    .detail-page {
+      padding-top: 68px;
+      min-height: 100vh;
+      background: var(--off-white);
+    }
+
+    .detail-hero {
+      background: var(--navy);
+      padding: 80px 2rem 70px;
+    }
+    .detail-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .detail-hero .section-label { color: var(--gold); }
+    .detail-hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 0.75rem;
+      margin-bottom: 1.2rem;
+    }
+    .detail-hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: none;
+      border: 1px solid rgba(184,150,90,0.4);
+      padding: 0.6rem 1.3rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn-back:hover {
+      background: rgba(184,150,90,0.1);
+      border-color: var(--gold);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 2rem;
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .timeline-entry:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 220px;
+      top: 0; bottom: -3rem;
+      width: 1px;
+      background: var(--border);
+      margin-left: 1.5rem;
+    }
+
+    .timeline-meta {
+      padding-top: 1.8rem;
+      text-align: right;
+    }
+    .timeline-period {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .timeline-org {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+    }
+
+    .timeline-body {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 0;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.8rem 2.2rem;
+      cursor: pointer;
+      transition: background var(--transition);
+      user-select: none;
+    }
+    .accordion-header:hover { background: rgba(13,31,60,0.02); }
+
+    .accordion-role {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .accordion-category {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    .accordion-chevron {
+      font-size: 0.9rem;
+      color: var(--slate-light);
+      transition: transform var(--transition);
+      flex-shrink: 0;
+    }
+    .accordion-header.open .accordion-chevron { transform: rotate(180deg); }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .accordion-body.open { max-height: 800px; }
+
+    .accordion-content {
+      padding: 0 2.2rem 2.2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .acc-img-placeholder {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      font-weight: 500;
+      margin-top: 1.5rem;
+    }
+
+    .acc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .acc-list li {
+      font-size: 0.92rem;
+      color: var(--slate);
+      line-height: 1.65;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    .acc-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 7px; height: 1px;
+      background: var(--gold);
+    }
+    .acc-list li strong { color: var(--navy); font-weight: 600; }
+
+    /* EDUCATION DETAIL */
+    .edu-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 2rem;
+    }
+
+    /* EDIT EDUCATION HERE */
+    .edu-detail-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .edu-detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    }
+    .edu-detail-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+
+    .edu-detail-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(184,150,90,0.1);
+      border: 1px solid rgba(184,150,90,0.25);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+
+    .edu-detail-inst {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-detail-prog {
+      font-size: 0.92rem;
+      color: var(--slate-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-detail-divider {
+      width: 32px; height: 1.5px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .edu-detail-focus { margin-bottom: 1.5rem; }
+    .edu-detail-focus-title {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate-light);
+      margin-bottom: 0.75rem;
+    }
+    .focus-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .focus-tag {
+      font-size: 0.76rem;
+      color: var(--slate);
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.75rem;
+      border-radius: 2px;
+    }
+
+    .edu-detail-note {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* HOBBIES PAGE */
+    .hobbies-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 2rem;
+    }
+
+    .hobby-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem 2.2rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition);
+    }
+    .hobby-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--gold);
+    }
+    .hobby-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .hobby-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .hobby-desc {
+      font-size: 0.88rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero::before { display: none; }
+      .hero-visual { order: -1; }
+      .profile-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .exp-cards { grid-template-columns: 1fr; }
+      .edu-cards { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .timeline-entry { grid-template-columns: 1fr; gap: 0; }
+      .timeline-meta { text-align: left; padding: 0 0 1rem 0; }
+      .timeline-entry::after { display: none; }
+      .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-md); }
+      .nav-links.open { display: flex; }
+      .nav-hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 70px 1.2rem; }
+      .hero { padding: 100px 1.2rem 60px; }
+      .hero-actions { flex-direction: column; }
+      .hero-stats { gap: 1.2rem; }
+      .timeline { padding: 50px 1.2rem; }
+      .edu-detail-grid, .hobbies-grid { padding: 50px 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" onclick="showPage('home')" href="#">G<span>.</span>R<span>.</span>Dash</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#profile-section" onclick="showPage('home')" class="nav-anchor">Profile</a></li>
+        <li><a href="#experience-section" onclick="showPage('home')" class="nav-anchor">Experience</a></li>
+        <li><a href="#education-section" onclick="showPage('home')" class="nav-anchor">Education</a></li>
+        <li><a href="#expertise-section" onclick="showPage('home')" class="nav-anchor">Expertise</a></li>
+        <li><button onclick="showPage('experience')">Full CV</button></li>
+        <li><a href="#contact-section" onclick="showPage('home')" class="nav-cta">Connect</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HOME PAGE
+  ============================================================ -->
+  <div id="page-home" class="page active">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-eyebrow">Strategy Leadership · Reliance Industries</div>
+          <!-- EDIT NAME & TITLE HERE -->
+          <h1 class="hero-name">Gyana Ranjan Dash</h1>
+          <p class="hero-title">Senior Manager – Corporate Planning &amp; Strategy</p>
+          <p class="hero-subtitle">Chairman's Office · CapEx Strategy · M&amp;A · Energy &amp; Petrochemicals</p>
+          <div class="hero-divider"></div>
+          <!-- EDIT EXECUTIVE SUMMARY HERE -->
+          <p class="hero-bio">
+            Strategy leader with <strong>6+ years at Reliance Industries Limited</strong>, driving
+            <strong>₹3L+ Cr capital allocation decisions</strong>, enterprise performance transformation,
+            and offshore mega-project execution. Experienced across <strong>Chairman's Office mandates,
+            M&amp;A evaluation</strong>, and ESG-integrated corporate planning at one of India's most complex conglomerates.
+          </p>
+          <div class="hero-actions">
+            <a href="#" class="btn-primary" onclick="return false;">⬇ Download CV</a>
+            <a href="https://linkedin.com" target="_blank" class="btn-outline">↗ LinkedIn</a>
+            <a href="#experience-section" class="btn-ghost">View Experience</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="profile-frame">
+            <div class="profile-img">
+              <!-- REPLACE WITH: <img src="your-photo.jpg" alt="Gyana Ranjan Dash" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" /> -->
+              <div class="profile-img-placeholder">GRD</div>
+            </div>
+          </div>
+          <!-- EDIT STATS HERE -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-num">6+</span>
+              <span class="stat-label">Years @ RIL</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">₹3L Cr</span>
+              <span class="stat-label">CapEx Evaluated</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">70+</span>
+              <span class="stat-label">Companies Benchmarked</span>
+            </div>
+          </div>
+          <div class="hero-affiliation">
+            <div class="affiliation-dot"></div>
+            <span>Reliance Industries Limited · India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE PROFILE SECTION -->
+    <section class="profile-section reveal" id="profile-section">
+      <div class="section-inner">
+        <div class="section-label">Executive Profile</div>
+        <h2 class="section-title">Leadership at the Intersection of<br/>Strategy & Capital</h2>
+        <div class="profile-grid">
+          <!-- EDIT EXECUTIVE PROFILE PARAGRAPHS HERE -->
+          <div class="profile-text reveal">
+            <p>
+              Gyana Ranjan Dash is a <strong>corporate strategy professional</strong> embedded within Reliance Industries Limited's Chairman's Office, where he has led enterprise-wide performance monitoring, KPI architecture, and capital evaluation across the Group's energy, petrochemicals, and new-energy verticals. He has been instrumental in evaluating <strong>₹3,00,000+ Crore</strong> of growth and CapEx initiatives, conducting competitor benchmarking across 70+ global companies, and developing investment notes for M&amp;A and JV opportunities.
+            </p>
+            <p>
+              Prior to his strategy role, Gyana served as a <strong>Project Engineer</strong> in RIL's deepwater offshore operations, directly overseeing the execution of KG-DWN-98/3 assets — among India's most strategically significant upstream projects. His portfolio includes SURF campaigns, FPSO Ruby deployment, and the successful commissioning of R-Cluster, Satellite Cluster, and MJ assets, representing over <strong>₹40,000 Crore</strong> in offshore investment.
+            </p>
+            <p>
+              His cross-functional exposure — spanning <strong>credit rating engagements, ESG &amp; EU CBAM alignment, organizational restructuring</strong>, and direct interfaces with 20+ CXOs — positions him as a rare integrator of financial rigor, operational credibility, and boardroom communication.
+            </p>
+          </div>
+          <div class="profile-metrics reveal">
+            <!-- EDIT METRICS HERE -->
+            <div class="metric-card">
+              <span class="metric-value">₹3,00,000 Cr</span>
+              <span class="metric-label">Capital expenditure initiatives evaluated</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">₹40,000 Cr</span>
+              <span class="metric-label">Deepwater offshore projects delivered</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">70+</span>
+              <span class="metric-label">Global competitor companies benchmarked</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">$600K</span>
+              <span class="metric-label">Cost optimisation achieved offshore</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">6%</span>
+              <span class="metric-label">Performance improvement driven through KPI systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section" id="experience-section">
+      <div class="section-inner">
+        <div class="section-label reveal">Career Highlights</div>
+        <h2 class="section-title reveal">Professional Experience</h2>
+        <div class="exp-cards">
+          <!-- EDIT EXPERIENCE HERE -->
+          <div class="exp-card reveal">
+            <div class="exp-card-org">Reliance Industries Limited</div>
+            <div class="exp-card-role">Senior Manager – Corporate Planning &amp; Strategy</div>
+            <div class="exp-card-period">2023 – Present · Chairman's Office</div>
+            <ul class="exp-card-list">
+              <li>Evaluated ₹3L+ Cr growth and CapEx initiatives across Group verticals</li>
+              <li>Architected enterprise KPI framework &amp; performance monitoring systems</li>
+              <li>Developed investment notes for M&amp;A, JV, and strategic partnership opportunities</li>
+              <li>Managed credit rating engagements and ESG / carbon strategy alignment</li>
+              <li>Benchmarked 70+ global peers to inform executive decision-making</li>
+            </ul>
+          </div>
+          <div class="exp-card reveal">
+            <div class="exp-card-org">Reliance Industries Limited</div>
+            <div class="exp-card-role">Project Engineer – Offshore Execution</div>
+            <div class="exp-card-period">2019 – 2023 · KG-DWN-98/3</div>
+            <ul class="exp-card-list">
+              <li>Delivered R-Cluster, Satellite Cluster &amp; MJ deepwater asset campaigns</li>
+              <li>Managed ₹40,000 Cr offshore investment portfolio</li>
+              <li>Led SURF installation campaigns and FPSO Ruby deployment</li>
+              <li>Achieved $600,000 in cost optimisation through engineering innovations</li>
+              <li>Received Executive Director commendation for MJ Project delivery</li>
+            </ul>
+          </div>
+        </div>
+        <div class="section-footer reveal">
+          <button class="btn-primary" onclick="showPage('experience')">View Detailed Experience →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="education-section" id="education-section">
+      <div class="section-inner">
+        <div class="section-label reveal">Academic Credentials</div>
+        <h2 class="section-title reveal">Education</h2>
+        <div class="edu-cards">
+          <!-- EDIT EDUCATION HERE -->
+          <div class="edu-card reveal">
+            <div class="edu-card-year">2024 – 25</div>
+            <div class="edu-card-inst">ISB</div>
+            <div class="edu-card-prog">Executive Education<br/>Indian School of Business</div>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-card-year">2022 – 23</div>
+            <div class="edu-card-inst">IIM Bangalore</div>
+            <div class="edu-card-prog">EGMPx<br/>Executive General Management Programme</div>
+          </div>
+          <div class="edu-card reveal">
+            <div class="edu-card-year">2015 – 19</div>
+            <div class="edu-card-inst">UPES</div>
+            <div class="edu-card-prog">B.Tech – Petroleum Engineering<br/>University of Petroleum & Energy Studies</div>
+          </div>
+        </div>
+        <div class="section-footer reveal">
+          <button class="btn-outline" onclick="showPage('education')">View Full Education →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOGNITION SECTION -->
+    <section class="recognition-section" id="recognition-section">
+      <div class="section-inner">
+        <div class="section-label reveal">Recognition &amp; Honours</div>
+        <h2 class="section-title reveal">Leadership &amp; Awards</h2>
+        <div class="recognition-list">
+          <!-- EDIT RECOGNITION HERE -->
+          <div class="recognition-item reveal">
+            <div class="recognition-icon">★</div>
+            <div class="recognition-text">
+              <strong>CAP Program – Youngest Cohort</strong>
+              <span>Selected among youngest participants in Reliance's flagship leadership programme</span>
+            </div>
+          </div>
+          <div class="recognition-item reveal">
+            <div class="recognition-icon">▲</div>
+            <div class="recognition-text">
+              <strong>FLYER High Potential Program</strong>
+              <span>Identified as high-potential leader for accelerated development track</span>
+            </div>
+          </div>
+          <div class="recognition-item reveal">
+            <div class="recognition-icon">◈</div>
+            <div class="recognition-text">
+              <strong>Executive Director Commendation</strong>
+              <span>MJ Project – exceptional delivery recognised at the highest level</span>
+            </div>
+          </div>
+          <div class="recognition-item reveal">
+            <div class="recognition-icon">₹</div>
+            <div class="recognition-text">
+              <strong>₹5 Lakh Performance Award</strong>
+              <span>Cash recognition for outstanding performance contributions</span>
+            </div>
+          </div>
+          <div class="recognition-item reveal">
+            <div class="recognition-icon">🏅</div>
+            <div class="recognition-text">
+              <strong>Governor of Odisha Academic Trophy</strong>
+              <span>State-level academic distinction and excellence recognition</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE SECTION -->
+    <section class="expertise-section" id="expertise-section">
+      <div class="section-inner">
+        <div class="section-label reveal">Capabilities</div>
+        <h2 class="section-title reveal">Core Expertise</h2>
+        <div class="expertise-grid">
+          <!-- EDIT EXPERTISE HERE -->
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">⬡</span>
+            <span class="expertise-name">Corporate Strategy</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">◈</span>
+            <span class="expertise-name">Capital Allocation</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">▦</span>
+            <span class="expertise-name">Financial Modelling</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">⊕</span>
+            <span class="expertise-name">M&amp;A Evaluation</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">▣</span>
+            <span class="expertise-name">Enterprise KPI Architecture</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">◉</span>
+            <span class="expertise-name">ESG &amp; Carbon Strategy</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">⊗</span>
+            <span class="expertise-name">Deepwater Offshore Execution</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">▤</span>
+            <span class="expertise-name">Risk &amp; Governance</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">⊞</span>
+            <span class="expertise-name">Org. Restructuring</span>
+          </div>
+          <div class="expertise-item reveal">
+            <span class="expertise-icon">◎</span>
+            <span class="expertise-name">Stakeholder Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact-section">
+      <div class="section-inner">
+        <div class="section-label reveal">Get In Touch</div>
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="section-desc reveal">For strategic partnerships, executive opportunities, or advisory engagements.</p>
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <!-- EDIT CONTACT DETAILS HERE -->
+            <a href="mailto:gyana@example.com" class="contact-item">
+              <span class="contact-item-icon">✉</span>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <span>gyana.ranjan.dash@example.com</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="contact-item">
+              <span class="contact-item-icon">in</span>
+              <div class="contact-item-text">
+                <strong>LinkedIn</strong>
+                <span>linkedin.com/in/gyanarandash</span>
+              </div>
+            </a>
+            <div class="contact-item">
+              <span class="contact-item-icon">◎</span>
+              <div class="contact-item-text">
+                <strong>Location</strong>
+                <span>India · Open to global opportunities</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form reveal">
+            <!-- CONTACT FORM (non-functional placeholder) -->
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Organisation</label>
+              <input type="text" class="form-input" placeholder="Company / Fund" />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="Nature of enquiry..."></textarea>
+            </div>
+            <button class="form-submit" onclick="alert('Message received. Thank you for reaching out.')">Send Message →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 <span>Gyana Ranjan Dash</span> · Senior Manager, Corporate Planning &amp; Strategy · Reliance Industries Limited</p>
+    </footer>
+  </div>
+
+  <!-- ============================================================
+       FULL EXPERIENCE PAGE
+  ============================================================ -->
+  <div id="page-experience" class="page">
+    <div class="detail-page">
+      <div class="detail-hero">
+        <div class="detail-hero-inner">
+          <div class="section-label">Professional Journey</div>
+          <h1 class="detail-hero-title">Detailed Experience</h1>
+          <p class="detail-hero-desc">Six years of progressive leadership at Reliance Industries — from deepwater field execution to Group-level strategy formulation.</p>
+          <button class="btn-back" onclick="showPage('home')">← Back to Profile</button>
+        </div>
+      </div>
+
+      <!-- EDIT EXPERIENCE TIMELINE HERE -->
+      <div class="timeline">
+
+        <!-- STRATEGIC PLANNING -->
+        <div class="timeline-entry">
+          <div class="timeline-meta">
+            <div class="timeline-period">2023 – Present</div>
+            <div class="timeline-org">Reliance Industries Ltd.</div>
+          </div>
+          <div class="timeline-body">
+            <div class="accordion-header open" onclick="toggleAccordion(this)">
+              <div>
+                <div class="accordion-role">Senior Manager – Corporate Planning &amp; Strategy</div>
+                <div class="accordion-category">Strategic Planning &amp; Business Performance</div>
+              </div>
+              <span class="accordion-chevron">▾</span>
+            </div>
+            <div class="accordion-body open">
+              <div class="accordion-content">
+                <div class="acc-img-placeholder">[ Strategy Operations Visual / Chairman's Office ]</div>
+                <ul class="acc-list">
+                  <li>Evaluated and stress-tested <strong>₹3,00,000+ Crore</strong> of growth &amp; capital expenditure initiatives across Group verticals including New Energy, Retail, O2C, and Oil &amp; Gas</li>
+                  <li>Led enterprise-wide <strong>KPI architecture design</strong> and performance monitoring frameworks enabling real-time tracking of Group-level strategic objectives</li>
+                  <li>Prepared <strong>investment notes and board-ready reports</strong> for M&amp;A, joint venture, and partnership evaluations across energy transition and adjacent sectors</li>
+                  <li>Conducted global <strong>competitor benchmarking</strong> across 70+ companies to inform portfolio strategy and capital deployment priorities</li>
+                  <li>Managed engagement with <strong>credit rating agencies</strong> (Moody's, S&amp;P, CRISIL) and supported investor relations with strategic narrative preparation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ESG & GOVERNANCE -->
+        <div class="timeline-entry">
+          <div class="timeline-meta">
+            <div class="timeline-period">2023 – Present</div>
+            <div class="timeline-org">Reliance Industries Ltd.</div>
+          </div>
+          <div class="timeline-body">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div>
+                <div class="accordion-role">ESG, Carbon &amp; Governance Strategy</div>
+                <div class="accordion-category">Sustainability · EU CBAM · CCTS Alignment</div>
+              </div>
+              <span class="accordion-chevron">▾</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <div class="acc-img-placeholder">[ ESG / Sustainability Framework Visual ]</div>
+                <ul class="acc-list">
+                  <li>Developed Group's <strong>carbon transition strategy</strong> aligned to EU Carbon Border Adjustment Mechanism (CBAM) and India's Carbon Credit Trading Scheme (CCTS)</li>
+                  <li>Built <strong>ESG-integrated investment frameworks</strong> for evaluating new energy and petrochemical projects against global sustainability benchmarks</li>
+                  <li>Interfaced with <strong>20+ CXOs and functional heads</strong> to embed ESG KPIs into business unit performance scorecards</li>
+                  <li>Supported Board governance reporting on <strong>climate risk, regulatory compliance</strong>, and sustainability milestones</li>
+                  <li>Contributed to organisational restructuring initiatives aligned to Group's Net Zero commitments and new-energy ambitions</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKFORCE & KPI -->
+        <div class="timeline-entry">
+          <div class="timeline-meta">
+            <div class="timeline-period">2023 – Present</div>
+            <div class="timeline-org">Reliance Industries Ltd.</div>
+          </div>
+          <div class="timeline-body">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div>
+                <div class="accordion-role">Workforce Optimisation &amp; KPI Systems</div>
+                <div class="accordion-category">Organisational Design · Performance Management</div>
+              </div>
+              <span class="accordion-chevron">▾</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <div class="acc-img-placeholder">[ Performance Management / KPI Dashboard Visual ]</div>
+                <ul class="acc-list">
+                  <li>Designed and implemented <strong>Group-wide KPI architecture</strong> driving <strong>6% improvement</strong> in measurable performance across business units</li>
+                  <li>Led workforce optimisation initiatives achieving <strong>headcount efficiency</strong> while maintaining operational continuity</li>
+                  <li>Developed <strong>cascaded OKR frameworks</strong> linking Chairman's Office strategic priorities to business unit execution targets</li>
+                  <li>Built performance dashboards for senior leadership consumption, enabling data-driven intervention at Board and ExCo level</li>
+                  <li>Partnered with HR and business heads to drive talent alignment with strategic transformation agendas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OFFSHORE EXECUTION -->
+        <div class="timeline-entry">
+          <div class="timeline-meta">
+            <div class="timeline-period">2019 – 2023</div>
+            <div class="timeline-org">Reliance Industries Ltd.</div>
+          </div>
+          <div class="timeline-body">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+              <div>
+                <div class="accordion-role">Project Engineer – Offshore Execution</div>
+                <div class="accordion-category">Offshore Execution · SURF Campaigns · KG-DWN-98/3</div>
+              </div>
+              <span class="accordion-chevron">▾</span>
+            </div>
+            <div class="accordion-body">
+              <div class="accordion-content">
+                <div class="acc-img-placeholder">[ Deepwater / FPSO / Offshore Platform Visual ]</div>
+                <ul class="acc-list">
+                  <li>Led technical execution of <strong>R-Cluster, Satellite Cluster, and MJ deepwater assets</strong> in the KG Basin — India's most strategically significant upstream deepwater project</li>
+                  <li>Managed <strong>₹40,000 Crore offshore investment portfolio</strong> across subsea, pipeline, and topsides scopes</li>
+                  <li>Directed <strong>SURF (Subsea Umbilicals, Risers &amp; Flowlines) installation campaigns</strong> and coordinated FPSO Ruby deployment milestones</li>
+                  <li>Achieved <strong>$600,000 in verified cost optimisation</strong> through engineering standardisation and vendor negotiation strategies</li>
+                  <li>Received <strong>Executive Director Commendation</strong> for exceptional delivery performance on the MJ Project — ahead of schedule and within approved budget envelope</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FULL EDUCATION PAGE
+  ============================================================ -->
+  <div id="page-education" class="page">
+    <div class="detail-page">
+      <div class="detail-hero">
+        <div class="detail-hero-inner">
+          <div class="section-label">Academic Formation</div>
+          <h1 class="detail-hero-title">Education &amp; Development</h1>
+          <p class="detail-hero-desc">A foundation of technical engineering excellence elevated by elite executive management education at India's premier institutions.</p>
+          <button class="btn-back" onclick="showPage('home')">← Back to Profile</button>
+        </div>
+      </div>
+
+      <!-- EDIT EDUCATION HERE -->
+      <div class="edu-detail-grid">
+
+        <div class="edu-detail-card">
+          <div class="edu-detail-badge">2024 – 25</div>
+          <div class="edu-detail-inst">ISB</div>
+          <div class="edu-detail-prog">Executive Education · Indian School of Business</div>
+          <div class="edu-detail-divider"></div>
+          <div class="edu-detail-focus">
+            <div class="edu-detail-focus-title">Focus Areas</div>
+            <div class="focus-tags">
+              <span class="focus-tag">Strategy</span>
+              <span class="focus-tag">Finance</span>
+              <span class="focus-tag">Leadership</span>
+              <span class="focus-tag">Innovation</span>
+            </div>
+          </div>
+          <p class="edu-detail-note">Executive-level programme at one of Asia's top-ranked business schools, deepening strategic management and financial decision-making capabilities alongside senior industry leaders.</p>
+        </div>
+
+        <div class="edu-detail-card">
+          <div class="edu-detail-badge">2022 – 23</div>
+          <div class="edu-detail-inst">IIM Bangalore</div>
+          <div class="edu-detail-prog">EGMPx · Executive General Management Programme</div>
+          <div class="edu-detail-divider"></div>
+          <div class="edu-detail-focus">
+            <div class="edu-detail-focus-title">Focus Areas</div>
+            <div class="focus-tags">
+              <span class="focus-tag">General Management</span>
+              <span class="focus-tag">Corporate Finance</span>
+              <span class="focus-tag">Org. Behaviour</span>
+              <span class="focus-tag">Operations</span>
+            </div>
+          </div>
+          <p class="edu-detail-note">Intensive executive programme from IIM Bangalore – India's premier management institution – offering holistic business leadership development across finance, strategy, operations, and people management.</p>
+        </div>
+
+        <div class="edu-detail-card">
+          <div class="edu-detail-badge">2015 – 19</div>
+          <div class="edu-detail-inst">UPES</div>
+          <div class="edu-detail-prog">B.Tech – Petroleum Engineering · University of Petroleum &amp; Energy Studies</div>
+          <div class="edu-detail-divider"></div>
+          <div class="edu-detail-focus">
+            <div class="edu-detail-focus-title">Focus Areas</div>
+            <div class="focus-tags">
+              <span class="focus-tag">Reservoir Engineering</span>
+              <span class="focus-tag">Drilling</span>
+              <span class="focus-tag">Production</span>
+              <span class="focus-tag">Offshore Systems</span>
+            </div>
+          </div>
+          <p class="edu-detail-note">Technical engineering foundation specialising in petroleum systems, subsurface science, and offshore project management — directly enabling the deepwater career at Reliance Industries. Recipient of the Governor of Odisha Academic Trophy.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HOBBIES & INTERESTS PAGE
+  ============================================================ -->
+  <div id="page-hobbies" class="page">
+    <div class="detail-page">
+      <div class="detail-hero">
+        <div class="detail-hero-inner">
+          <div class="section-label">Beyond the Boardroom</div>
+          <h1 class="detail-hero-title">Interests &amp; Pursuits</h1>
+          <p class="detail-hero-desc">Interests that inform perspective, discipline, and the strategic lens brought to complex challenges.</p>
+          <button class="btn-back" onclick="showPage('home')">← Back to Profile</button>
+        </div>
+      </div>
+
+      <!-- EDIT HOBBIES HERE -->
+      <div class="hobbies-grid">
+
+        <div class="hobby-card">
+          <span class="hobby-icon">📖</span>
+          <div class="hobby-title">Strategic Reading</div>
+          <p class="hobby-desc">Dedicated to reading across macroeconomics, corporate history, geopolitics, and energy transition literature. Current interests span energy security, India's industrial policy, and global capital flows.</p>
+        </div>
+
+        <div class="hobby-card">
+          <span class="hobby-icon">⚡</span>
+          <div class="hobby-title">Fitness &amp; Discipline</div>
+          <p class="hobby-desc">Structured fitness practice as a foundation for mental clarity and executive performance. Believes that physical discipline translates directly into consistency of output and decision-making quality.</p>
+        </div>
+
+        <div class="hobby-card">
+          <span class="hobby-icon">🌐</span>
+          <div class="hobby-title">Policy &amp; Energy Markets</div>
+          <p class="hobby-desc">Closely follows global energy policy, carbon market development, and the regulatory landscape shaping India's energy transition. Regular reader of IEA, OPEC, and SEBI publications.</p>
+        </div>
+
+        <div class="hobby-card">
+          <span class="hobby-icon">✈</span>
+          <div class="hobby-title">Travel &amp; Cultural Exposure</div>
+          <p class="hobby-desc">Travel as a means of developing cross-cultural intelligence and broadening strategic perspective. Particular interest in how different economies navigate industrialisation and sustainability simultaneously.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ---- PAGE NAVIGATION ---- */
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById('page-' + pageId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    /* ---- STICKY NAV SHADOW ---- */
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    /* ---- HAMBURGER MENU ---- */
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    /* ---- SMOOTH ANCHOR SCROLL (HOME PAGE) ---- */
+    document.querySelectorAll('.nav-anchor').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        showPage('home');
+        const href = link.getAttribute('href');
+        setTimeout(() => {
+          const target = document.querySelector(href);
+          if (target) {
+            const offset = 80;
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }, 100);
+        navLinks.classList.remove('open');
+      });
+    });
+
+    /* ---- ACCORDION ---- */
+    function toggleAccordion(header) {
+      const body = header.nextElementSibling;
+      const isOpen = header.classList.contains('open');
+      header.classList.toggle('open', !isOpen);
+      body.classList.toggle('open', !isOpen);
+    }
+
+    /* ---- SCROLL REVEAL ---- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    function initReveal() {
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+    initReveal();
+
+    /* ---- HERO BUTTON SCROLL ---- */
+    document.querySelector('.btn-ghost').addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.getElementById('experience-section');
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
